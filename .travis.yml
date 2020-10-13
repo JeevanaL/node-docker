@@ -1,0 +1,6 @@
+sudo : required
+services:
+  - docker
+script:
+  - docker build -t jeevanadocker123/node .
+  - docker images jeevanadocker123
