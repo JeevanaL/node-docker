@@ -5,7 +5,7 @@ script:
   - docker build -t jeevanadocker123/node .
   - docker images jeevanadocker123
 before_deploy:
-  - docker login --username jeevanadocker123 --password-stdin
+  - docker login --username=$DOCKER_USER --password-stdin=$DOCKER_PASS
 deploy:
   provider: script
   script: docker push jeevanadocker123/node
