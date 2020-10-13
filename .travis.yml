@@ -4,3 +4,10 @@ services:
 script:
   - docker build -t jeevanadocker123/node .
   - docker images jeevanadocker123
+before_deploy:
+  - docker login -u jeevanadocker123 -p $Sairam123
+deploy:
+  provider: script
+  script: docker push jeevanadocker123/node
+  on:
+    branch: master
