@@ -1,11 +1,15 @@
 sudo : required
 services:
   - docker
+
 script:
   - docker build -t jeevanadocker123/node .
   - docker images jeevanadocker123
+
 before_deploy:
-  - docker login --username=$DOCKER_USER --password-stdin=$DOCKER_PASS
+  - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+
+
 deploy:
   provider: script
   script: docker push jeevanadocker123/node
