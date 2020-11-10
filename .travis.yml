@@ -5,7 +5,7 @@ env:
   - DOCKER_USER = jeevanadocker123
 
 script:
-  - docker build -t node .
+  - docker build -t node:latest .
   - docker images node
 
 
@@ -17,6 +17,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push jeevanadocker123/node
+  script: docker push jeevanadocker123/node:latest
   on:
     branch: master
