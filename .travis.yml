@@ -9,13 +9,13 @@ script:
 
 
 before_deploy:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -u "$DOCKER_USER" --password-stdin
   - echo "$DOCKER_USER"
   - echo "$DOCKER_PASS"
   - echo $DOCKER_USER
 
 deploy:
   provider: script
-  script: docker push jeevanadocker123/node:latest
+  script: docker push node:latest
   on:
     branch: master
