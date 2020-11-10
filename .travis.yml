@@ -1,16 +1,15 @@
 sudo : required
 services:
   - docker
-env:
-  - DOCKER_USER = jeevanadocker123
+
 
 script:
   - docker build -t node:latest .
-  - docker images node
+  - docker images node:latest
 
 
 before_deploy:
-  - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - echo "$DOCKER_USER"
   - echo "$DOCKER_PASS"
   - echo $DOCKER_USER
