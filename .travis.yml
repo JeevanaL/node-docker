@@ -5,7 +5,7 @@ services:
 
 script:
   - docker build -t jeevanadocker123/node .
-  - docker images jeevanadocker123
+  - docker images jeevanadocker123/node
 
 
 before_deploy:
