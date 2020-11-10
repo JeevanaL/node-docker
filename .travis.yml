@@ -5,8 +5,8 @@ env:
   - DOCKER_USER = jeevanadocker123
 
 script:
-  - docker build -t jeevanadocker123/node .
-  - docker images jeevanadocker123/node
+  - docker build -t node .
+  - docker images node
 
 
 before_deploy:
